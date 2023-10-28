@@ -1,0 +1,68 @@
+* {
+    box-sizing: border-box;
+}
+
+.background {
+    background-image: url("배경1.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form {
+    width: 52%;
+    height: 57%;
+    border-radius: 10px;
+    background: rgba(147, 149, 159, 0.83);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.title {
+    width: 50%;
+    font-size: 30px;
+    text-align: center;
+    font-weight: 1000;
+    border-bottom: solid 1px #ffffff7f;
+    margin-bottom: 5%;
+    padding-bottom: 2%;
+
+}
+input::placeholder {
+    color: #d6d6d6;
+    font-weight: 200;
+}
+.input {
+    background-color: transparent;
+    margin-bottom: 3%;
+    width: 33%;
+    border: none;
+    border-bottom: solid 1px #ffffff7f;
+    font-size: 10px;
+}
+.login-btn {
+    margin-bottom: 7%;
+    margin-top: 3%;
+    width: 33%;
+    padding: 1%;
+    background-color: #000;
+    color: #d6d6d6;
+    border-radius: 8px;
+}
+.footer {
+    width: 33%;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 10px;
+    zoom: 0.8;
+}
+.sign-up {
+    margin-right: auto;
+}
+.find {
+    margin-left: auto;
+}

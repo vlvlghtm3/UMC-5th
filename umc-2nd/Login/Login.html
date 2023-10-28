@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>로그인</title>
+    <meta charset="utf-8">
+    <link href="Login.css" rel="stylesheet">
+</head>
+<body>
+    <div class="modalWrap" id="modal-back">
+        <div class="modal-form" id="modal">
+            <p class="modalTitle">가입 성공!</p>
+            <p>UMC 챌린저 가입을 축하합니다!!</p>
+            <button id="close">닫기</button>
+        </div>
+    </div>
+    <div class="background">
+        <div class="modalstyle" id="modal"></div>
+        <div class="login-form">
+            <div class="title">회원가입</div>
+
+            <div class="login-Wrap">
+                <div class="text">이름</div>
+                <input class="input" type="text" id="name"/>
+                <div class="check" id="validateName"></div>
+
+                <div class="text">닉네임</div>
+                <input class="input" type="text" id="nick"/>
+                <div class="check" id="validateNick"></div>
+
+                <div class="text">이메일</div>
+                <input class="input" type="email" id="email" />
+                <div class="check" id="validateEmail"></div>
+
+                <div class="text">비밀번호</div>
+                <input class="input" type="password" id="pw" />
+                <div class="check" id="validatePw"></div>
+
+                <div class="text">비밀번호 확인</div>
+                <input class="input" type="password" id="check-pw" />
+                <div class="check" id="validateCheck-pw"></div>
+
+                <button class="login-btn" id="Login-btn" disabled >가입하기</button>
+            </div>
+        </div>
+    </div>
+    <script src="Login.js" type="module"></script>
+</body>
+</html>
