@@ -25,17 +25,17 @@ const Poster = styled.div`
     border-radius: 3px;
     position: relative;
     &:hover {
-        ${ModalWrap}{
-            display: flex;
-        }
+    ${ModalWrap} {
+      display: flex;
     }
-`; 
-const ModalForm = styled.div` 
-    width: 85%;
-    height: 80%;
-    font-size: 10px;
-    text-align: justify;
-`; 
+  }
+`;
+const ModalForm = styled.div`
+  width: 85%;
+  height: 80%;
+  font-size: 10px;
+  text-align: justify;
+`;
 const ModalTitle = styled.div`
     margin-bottom: 20%;
 `; 
