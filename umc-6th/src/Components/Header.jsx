@@ -35,7 +35,7 @@ const LinkStyle = styled(Link)`
 function Header() {
   return (
     <HeaderWrapper>
-      <Logo href="/" title="로고">로고</Logo>
+      <Logo href="/home" title="로고">로고</Logo>
       <LinkStyle to="/movie">영화</LinkStyle>
       <LinkStyle to="/tv">TV 프로그램</LinkStyle>
       <LinkStyle to="/celebrity">인물</LinkStyle>
