@@ -8,22 +8,23 @@ import Home from './page/Home';
 import MovieDetail from './page/MovieDetail';
 import PageNotFound from './page/NotFound';
 import LoginPage from './page/LoginPage';
+
 function App() {
   return (
-    <div className="root-wrap">
-      <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/movie" element={<Movie />} />
-          <Route path="/movie/:title" element={<MovieDetail />} />
-          <Route path="/tv" element={<TV />} />
-          <Route path="/celebrity" element={<Celebrity />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="*" element={<PageNotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </div>
+      <div className="root-wrap">
+        <BrowserRouter>
+          <Header />
+          <Routes>
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/movie" element={<Movie />} />
+            <Route path="/movie/:title" element={<MovieDetail />} />
+            <Route path="/tv" element={<TV />} />
+            <Route path="/celebrity" element={<Celebrity />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="*" element={<PageNotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </div>
   );
 }
 

@@ -1,3 +1,4 @@
+// LoginPage.jsx
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
@@ -54,10 +55,7 @@ const LoginPage = () => {
   const [pw, setPw] = useState('');
   const [idError, setIdError] = useState(false);
   const [pwError, setPwError] = useState(false);
-
   const navigate = useNavigate();
-
-
 
   const handleIdChange = (e) => {
     const inputValue = e.target.value;
@@ -76,16 +74,14 @@ const LoginPage = () => {
   const isValidId = id === 'umcweb';
   const isValidPw = pw === '1234';
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (isValidId && isValidPw) {
-      alert('로그인 성공!');
-      navigate('/home');
-    }
+  const saveTokenToLocalStorage = (token, userId) => {
+    localStorage.setItem('token', token);
+    localStorage.setItem('userId', userId);
   };
+
   const fetchData = async () => {
     try {
-      const endpoint = 'http://localhost:8080/user/login';
+      const endpoint = 'http://localhost:8000/user/login';
       const requestBody = {
         id: "umcweb",
         pw: "1234"
@@ -98,11 +94,28 @@ const LoginPage = () => {
         },
       });
 
+      console.log('Response data:', response.data);
+
       // 응답 데이터 확인
-      console.log(response.data);
+      const { token, Id } = response.data;
+
+      // 토큰을 로컬 스토리지에 저장
+      saveTokenToLocalStorage(token, Id);
+
+      // 네비게이션
+      navigate('/home');
+
     } catch (error) {
       // 오류 처리
       console.log('Error during POST request:', error);
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (isValidId && isValidPw) {
+      // 사용자가 로그인 버튼을 클릭하면 fetchData 함수를 호출
+      fetchData();
     }
   };
   return (
@@ -130,7 +143,6 @@ const LoginPage = () => {
         <Button type="submit" disabled={!isValidId || !isValidPw}>
           로그인
         </Button>
-        <button onClick={fetchData}>post 요청</button>
       </Form>
     </LoginPageWrapper>
   );
