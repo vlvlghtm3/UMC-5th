@@ -8,7 +8,6 @@ function Home() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        console.log("10", token10)
         const endpoint = 'http://localhost:8000/user/payload';
     
         // axios를 사용하여 GET 요청 보내기
