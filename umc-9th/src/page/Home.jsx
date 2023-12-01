@@ -30,7 +30,7 @@ function Home() {
 
     // fetchData 함수 호출
     fetchData();
-  }, []);
+  }, [token10]);
   return (
     <div>
       <AdPage />
